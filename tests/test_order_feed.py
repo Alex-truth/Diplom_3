@@ -1,7 +1,5 @@
 import allure
 from pages.order_feed_page import OrderFeed
-import time
-from tests.conftest import driver
 
 
 class TestOrderFeed:
@@ -20,7 +18,6 @@ class TestOrderFeed:
         test.login()
         test.drag_and_drop_ingredient_fluorescent_bun_to_order()
         test.click_on_checkout_button()
-        time.sleep(5)
         value = test.get_order_number()
         test.close_popup_order_number()
         test.click_switch_order_feed()
@@ -35,11 +32,8 @@ class TestOrderFeed:
         count = test.get_all_orders()
         test.click_constructor_button()
         test.drag_and_drop_ingredient_fluorescent_bun_to_order()
-        time.sleep(3)
         test.click_on_checkout_button()
-        time.sleep(3)
         test.close_popup_order_number()
-        time.sleep(3)
         test.click_switch_order_feed()
         new_count = test.get_all_orders()
         assert int(new_count) > int(count)
@@ -53,12 +47,9 @@ class TestOrderFeed:
         test.click_constructor_button()
         test.drag_and_drop_ingredient_fluorescent_bun_to_order()
         test.click_on_checkout_button()
-        time.sleep(3)
         test.close_popup_order_number()
-        time.sleep(3)
         test.click_switch_order_feed()
-        time.sleep(5)
-        new_count = test.get_count_today()
+        new_count = test.new_get_count_today()
         assert int(new_count) > int(count)
 
     @allure.title('После оформления заказа его номер появляется в разделе "В работе"')
@@ -67,10 +58,8 @@ class TestOrderFeed:
         test.login()
         test.drag_and_drop_ingredient_fluorescent_bun_to_order()
         test.click_on_checkout_button()
-        time.sleep(3)
         count = test.get_order_number()
         test.close_popup_order_number()
         test.click_switch_order_feed()
-        time.sleep(3)
         new_count = test.get_order_number_in_progress()
         assert '0' + count in new_count

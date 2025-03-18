@@ -1,6 +1,4 @@
 import allure
-
-from tests.conftest import driver
 from urls import Urls
 from pages.constructor_page import ConstructorPage
 
@@ -12,14 +10,14 @@ class TestConstructor:
         test = ConstructorPage(driver)
         test.click_auth_button()
         test.click_constructor_button()
-        assert driver.current_url == Urls.MAIN_PAGE
+        assert test.get_current_url() == Urls.MAIN_PAGE
 
     @allure.title('Переход по клику на «Лента заказов»')
     def test_click_order_feed(self, driver):
         test = ConstructorPage(driver)
         test.click_auth_button()
         test.click_switch_order_feed()
-        assert driver.current_url == Urls.ORDER_FEED
+        assert test.get_current_url() == Urls.ORDER_FEED
 
     @allure.title('При клике на ингредиент, появится всплывающее окно с деталями')
     def test_click_ingredient_window_apper(self, driver):

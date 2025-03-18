@@ -2,7 +2,6 @@ import allure
 from locators import LocatorsPwdPage
 from data import email, password
 from pages.base_page import BasePage
-from selenium.common.exceptions import ElementClickInterceptedException
 
 
 class PasswordPage(BasePage):
@@ -33,13 +32,12 @@ class PasswordPage(BasePage):
 
     @allure.step('Клик по иконке видимости пароля')
     def click_visibility_icon(self):
-        self.wait_to_clickable(LocatorsPwdPage.BUTTON_VISIBILITY_PASSWORD)
-        try:
-            self.click_element(LocatorsPwdPage.BUTTON_VISIBILITY_PASSWORD)
-        except ElementClickInterceptedException:
-            element = self.driver.find_element(*LocatorsPwdPage.BUTTON_VISIBILITY_PASSWORD)
-            self.driver.execute_script("arguments[0].click();", element)
+        self.click_element(LocatorsPwdPage.BUTTON_VISIBILITY_PASSWORD)
 
     @allure.step('Проверка активности скрытия элемента')
     def check_visibility(self):
         self.wait_to_visibility(LocatorsPwdPage.SEARCH_ELEMENT)
+
+    @allure.step('Получаем текущую страницу')
+    def get_current_url(self):
+        return self.driver.current_url

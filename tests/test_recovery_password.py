@@ -1,7 +1,6 @@
 import allure
 from pages.password_page import PasswordPage
 from urls import Urls
-import pytest
 
 class TestRecoveryPassword:
 
@@ -10,7 +9,7 @@ class TestRecoveryPassword:
         test = PasswordPage(driver)
         test.lk_click()
         test.recovery_password_click()
-        assert driver.current_url == Urls.RECOVERY_PAGE
+        assert test.get_current_url() == Urls.RECOVERY_PAGE
 
     @allure.title('Переход на страницу ввода нового пароля')
     def test_enter_mail_click_restore_button(self, driver):
@@ -20,7 +19,7 @@ class TestRecoveryPassword:
         test.email_input()
         test.click_recovery_button()
         test.wait_save_button()
-        assert driver.current_url == Urls.RESET_PAGE
+        assert test.get_current_url() == Urls.RESET_PAGE
 
     @allure.title('Клик по кнопке показать/скрыть пароль делает поле активным')
     def test_click_button_invisibility_button(self, driver):
