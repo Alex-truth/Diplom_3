@@ -1,0 +1,20 @@
+Ошибка при клике по кнопке 'Авторизация' обычным способом: Message: Element <button class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"> is not clickable at point (768,545) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:197:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:342:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:344:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:220:31
+
+Ошибка при клике по кнопке 'Войти' обычным способом: Message: Element <button class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"> is not clickable at point (768,549) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:197:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:342:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:344:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:220:31
+
